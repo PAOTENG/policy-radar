@@ -1,0 +1,67 @@
+[
+  {
+    "id": "gs_001",
+    "keywords_text": "科技、人工智能、申报、广东",
+    "l1": "科技",
+    "l2": "人工智能",
+    "l3": "申报",
+    "region": "广东",
+    "user_description": "深圳AI算法公司，注册资本500万，成立3年，有软件著作权5项",
+    "expected_sections": ["政策总览", "重点推荐", "申报时间表", "行动建议", "信息来源"],
+    "expected_policy_keywords": ["人工智能", "广东", "补贴", "申报"],
+    "user_rating": 0.8,
+    "note": "典型科技企业政策查询"
+  },
+  {
+    "id": "gs_002",
+    "keywords_text": "教育、高校、科研竞赛、全国",
+    "l1": "教育",
+    "l2": "高校",
+    "l3": "科研竞赛",
+    "region": "全国",
+    "user_description": "高校计算机学院团队，教师带队，研究方向大模型评测",
+    "expected_sections": ["政策总览", "重点推荐", "申报时间表", "行动建议", "信息来源"],
+    "expected_policy_keywords": ["竞赛", "科研", "高校"],
+    "user_rating": 0.75,
+    "note": "高校科研团队竞赛查询"
+  },
+  {
+    "id": "gs_003",
+    "keywords_text": "科技、新能源、税收优惠、北京",
+    "l1": "科技",
+    "l2": "新能源",
+    "l3": "税收优惠",
+    "region": "北京",
+    "user_description": "北京新能源汽车零部件制造商，年营收5000万，高新企业认定中",
+    "expected_sections": ["政策总览", "重点推荐", "申报时间表", "行动建议", "信息来源"],
+    "expected_policy_keywords": ["新能源", "税收", "北京", "高新"],
+    "user_rating": 0.85,
+    "note": "新能源税收政策查询"
+  },
+  {
+    "id": "gs_004",
+    "keywords_text": "金融、普惠金融、补贴、上海",
+    "l1": "金融",
+    "l2": "普惠金融",
+    "l3": "补贴",
+    "region": "上海",
+    "user_description": "上海小贷公司，主要服务小微企业，注册资本2亿，有银行业务许可证",
+    "expected_sections": ["政策总览", "重点推荐", "申报时间表", "行动建议", "信息来源"],
+    "expected_policy_keywords": ["普惠", "金融", "上海", "小微"],
+    "user_rating": 0.7,
+    "note": "金融类政策补贴查询"
+  },
+  {
+    "id": "gs_005",
+    "keywords_text": "人才、高层次人才、引进、浙江",
+    "l1": "人才",
+    "l2": "高层次人才",
+    "l3": "引进",
+    "region": "浙江",
+    "user_description": "浙江杭州科技型中小企业，需要引进博士级AI算法人才",
+    "expected_sections": ["政策总览", "重点推荐", "申报时间表", "行动建议", "信息来源"],
+    "expected_policy_keywords": ["人才", "引进", "浙江", "博士"],
+    "user_rating": 0.8,
+    "note": "人才引进政策查询"
+  }
+]

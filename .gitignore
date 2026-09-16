@@ -1,0 +1,45 @@
+# ===== 敏感信息（绝不上传）=====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+id_rsa
+id_rsa.pub
+*.pfx
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.db
+*.sqlite3
+
+# ===== IDE / 本地规则 =====
+.idea/
+*.iml
+*.ipr
+*.iws
+.cursor/
+
+# ===== 上传 / 临时 / 日志 =====
+*.log
+_tmp_*
+._tmp_*
+uploads/
+.uploads/
+
+# ===== OS =====
+Thumbs.db
+ehthumbs.db
+.DS_Store
+Desktop.ini

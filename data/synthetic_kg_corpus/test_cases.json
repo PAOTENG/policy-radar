@@ -1,0 +1,459 @@
+{
+  "corpus": "粤创智造合成政策图谱评测集",
+  "generated_from": "data\\synthetic_kg_corpus\\graph_manifest.json",
+  "id_map": {
+    "P01": 458,
+    "P02": 459,
+    "P03": 460,
+    "P04": 461,
+    "P05": 462,
+    "P06": 463,
+    "P07": 464,
+    "P08": 465,
+    "P09": 466,
+    "P10": 467,
+    "P11": 468,
+    "P12": 469,
+    "P13": 470,
+    "P14": 471,
+    "P15": 472,
+    "P16": 473,
+    "P17": 474,
+    "P18": 475,
+    "P19": 476,
+    "P20": 477
+  },
+  "cases": {
+    "graph_expand": [
+      {
+        "case_id": "expand_P02",
+        "type": "graph_expand",
+        "seed_doc_id": "P02",
+        "seed_pg_id": 459,
+        "expected_neighbor_doc_ids": [
+          "P01",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P13",
+          "P14",
+          "P15"
+        ],
+        "expected_neighbor_pg_ids": [
+          458,
+          460,
+          461,
+          462,
+          463,
+          470,
+          471,
+          472
+        ],
+        "query_hint": {
+          "region": "广东",
+          "l1": "资金支持",
+          "user_text": "粤创智造 研发费用补贴"
+        },
+        "assert": "expand_related 后候选中应包含至少 1 个 expected_neighbor_pg_ids"
+      },
+      {
+        "case_id": "expand_P06",
+        "type": "graph_expand",
+        "seed_doc_id": "P06",
+        "seed_pg_id": 463,
+        "expected_neighbor_doc_ids": [
+          "P02",
+          "P07",
+          "P08",
+          "P09",
+          "P13"
+        ],
+        "expected_neighbor_pg_ids": [
+          459,
+          464,
+          465,
+          466,
+          470
+        ],
+        "query_hint": {
+          "region": "广东",
+          "l1": "资金支持",
+          "user_text": "粤创智造 研发费用补贴"
+        },
+        "assert": "expand_related 后候选中应包含至少 1 个 expected_neighbor_pg_ids"
+      },
+      {
+        "case_id": "expand_P04",
+        "type": "graph_expand",
+        "seed_doc_id": "P04",
+        "seed_pg_id": 461,
+        "expected_neighbor_doc_ids": [
+          "P02",
+          "P07",
+          "P16"
+        ],
+        "expected_neighbor_pg_ids": [
+          459,
+          464,
+          473
+        ],
+        "query_hint": {
+          "region": "深圳",
+          "l1": "资金支持",
+          "user_text": "粤创智造 研发费用补贴"
+        },
+        "assert": "expand_related 后候选中应包含至少 1 个 expected_neighbor_pg_ids"
+      },
+      {
+        "case_id": "expand_P07",
+        "type": "graph_expand",
+        "seed_doc_id": "P07",
+        "seed_pg_id": 464,
+        "expected_neighbor_doc_ids": [
+          "P04",
+          "P06"
+        ],
+        "expected_neighbor_pg_ids": [
+          461,
+          463
+        ],
+        "query_hint": {
+          "region": "深圳",
+          "l1": "资金支持",
+          "user_text": "粤创智造 研发费用补贴"
+        },
+        "assert": "expand_related 后候选中应包含至少 1 个 expected_neighbor_pg_ids"
+      },
+      {
+        "case_id": "expand_P01",
+        "type": "graph_expand",
+        "seed_doc_id": "P01",
+        "seed_pg_id": 458,
+        "expected_neighbor_doc_ids": [
+          "P02",
+          "P03"
+        ],
+        "expected_neighbor_pg_ids": [
+          459,
+          460
+        ],
+        "query_hint": {
+          "region": "广东",
+          "l1": "资金支持",
+          "user_text": "粤创智造 研发费用补贴"
+        },
+        "assert": "expand_related 后候选中应包含至少 1 个 expected_neighbor_pg_ids"
+      }
+    ],
+    "conflict_gate": [
+      {
+        "case_id": "conflict_01_P01_P02",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P01",
+          "P02"
+        ],
+        "pair_pg_ids": [
+          458,
+          459
+        ],
+        "relation_type": "supersedes",
+        "expected_conflict_types": [
+          "legal_validity_conflict",
+          "funding_amount_conflict",
+          "eligibility_conflict"
+        ],
+        "note": "旧文已被新文替代；金额300万 vs 500万；门槛300万/1年 vs 500万/2年",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_02_P01_P03",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P01",
+          "P03"
+        ],
+        "pair_pg_ids": [
+          458,
+          460
+        ],
+        "relation_type": "supersedes",
+        "expected_conflict_types": [
+          "legal_validity_conflict"
+        ],
+        "note": "废止公告明确废止 P01",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_03_P02_P04",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P02",
+          "P04"
+        ],
+        "pair_pg_ids": [
+          459,
+          461
+        ],
+        "relation_type": "implements",
+        "expected_conflict_types": [
+          "funding_hierarchy_diff",
+          "eligibility_conflict"
+        ],
+        "note": "省500万 vs 市200万；注册资本500万/2年 vs 200万/1年",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_04_P02_P05",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P02",
+          "P05"
+        ],
+        "pair_pg_ids": [
+          459,
+          462
+        ],
+        "relation_type": "implements",
+        "expected_conflict_types": [
+          "funding_hierarchy_diff"
+        ],
+        "note": "省500万 vs 广州配套300万",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_05_P06_P07",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P06",
+          "P07"
+        ],
+        "pair_pg_ids": [
+          463,
+          464
+        ],
+        "relation_type": "implements",
+        "expected_conflict_types": [
+          "deadline_conflict",
+          "funding_hierarchy_diff",
+          "eligibility_conflict"
+        ],
+        "note": "截止9-30 vs 8-15；金额500 vs 200；门槛不一致",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_06_P06_P08",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P06",
+          "P08"
+        ],
+        "pair_pg_ids": [
+          463,
+          465
+        ],
+        "relation_type": "implements",
+        "expected_conflict_types": [
+          "deadline_conflict",
+          "funding_hierarchy_diff"
+        ],
+        "note": "截止9-30 vs 9-10；金额500 vs 300",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_07_P04_P05",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P04",
+          "P05"
+        ],
+        "pair_pg_ids": [
+          461,
+          462
+        ],
+        "relation_type": "same_program",
+        "expected_conflict_types": [
+          "funding_amount_conflict",
+          "eligibility_conflict"
+        ],
+        "note": "深圳与广州同级细则金额/门槛不同",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_08_P06_P10",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P06",
+          "P10"
+        ],
+        "pair_pg_ids": [
+          463,
+          467
+        ],
+        "relation_type": "amends",
+        "expected_conflict_types": [
+          "exclusivity_conflict"
+        ],
+        "note": "补充通知含不得重复/就高不就低",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_09_P11_P10",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P11",
+          "P10"
+        ],
+        "pair_pg_ids": [
+          468,
+          467
+        ],
+        "relation_type": "same_program",
+        "expected_conflict_types": [
+          "exclusivity_conflict"
+        ],
+        "note": "科技金融与研发补贴费用口径互斥规则",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_10_P19_P20",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P19",
+          "P20"
+        ],
+        "pair_pg_ids": [
+          476,
+          477
+        ],
+        "relation_type": "same_program",
+        "expected_conflict_types": [
+          "funding_amount_conflict",
+          "deadline_conflict"
+        ],
+        "note": "珠海120万/10-15 vs 中山80万/9-01",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_11_P02_P14",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P02",
+          "P14"
+        ],
+        "pair_pg_ids": [
+          459,
+          471
+        ],
+        "relation_type": "implements",
+        "expected_conflict_types": [
+          "exclusivity_conflict"
+        ],
+        "note": "省500万 vs 东莞450万未达1.5倍金额阈值，故不以金额层级差为金标；正文含不得重复等互斥表述",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      },
+      {
+        "case_id": "conflict_12_P07_P12",
+        "type": "conflict_gate",
+        "pair_doc_ids": [
+          "P07",
+          "P12"
+        ],
+        "pair_pg_ids": [
+          464,
+          469
+        ],
+        "relation_type": "same_program",
+        "expected_conflict_types": [
+          "deadline_conflict",
+          "exclusivity_conflict"
+        ],
+        "note": "两市通知截止不同；贴息含不得重复",
+        "assert": "check_pair_conflicts / run_conflict_gate 检出类型应与 expected 有交集"
+      }
+    ],
+    "hybrid_retrieve": [
+      {
+        "case_id": "retrieve_yuechuang_gd",
+        "type": "hybrid_retrieve",
+        "keywords": {
+          "l1": "资金支持",
+          "l2": "",
+          "l3": "研发补贴",
+          "region": "广东",
+          "user_text": "粤创智造高新技术企业研发费用补贴管理办法"
+        },
+        "user_input": "广东高新技术企业研发费用补贴申报条件与金额",
+        "expect_title_substr": [
+          "粤创智造",
+          "研发费用"
+        ],
+        "assert": "混合检索结果标题应命中粤创智造相关合成文"
+      },
+      {
+        "case_id": "retrieve_shenzhen_detail",
+        "type": "hybrid_retrieve",
+        "keywords": {
+          "l1": "资金支持",
+          "region": "深圳",
+          "user_text": "深圳 粤创智造 实施细则"
+        },
+        "user_input": "深圳研发费用补贴实施细则最高多少万",
+        "expect_title_substr": [
+          "深圳",
+          "粤创智造"
+        ],
+        "assert": "检索应能召回深圳细则或申报通知"
+      },
+      {
+        "case_id": "retrieve_deadline_notice",
+        "type": "hybrid_retrieve",
+        "keywords": {
+          "l1": "资金支持",
+          "region": "广东",
+          "user_text": "2026年粤创智造申报通知截止"
+        },
+        "user_input": "2026年粤创智造研发费用补贴什么时候截止申报",
+        "expect_title_substr": [
+          "申报",
+          "粤创智造"
+        ],
+        "assert": "应召回省级或市级申报通知"
+      }
+    ],
+    "e2e": [
+      {
+        "case_id": "e2e_province_city_gate",
+        "type": "expand_then_conflict",
+        "seed_doc_id": "P02",
+        "seed_pg_id": 459,
+        "focus_neighbor_doc_id": "P04",
+        "focus_neighbor_pg_id": 461,
+        "expected_conflict_types": [
+          "funding_hierarchy_diff",
+          "eligibility_conflict"
+        ],
+        "note": "命中省办法后图谱补召深圳细则，应检出金额层级差与门槛冲突"
+      },
+      {
+        "case_id": "e2e_deadline_gate",
+        "type": "expand_then_conflict",
+        "seed_doc_id": "P06",
+        "seed_pg_id": 463,
+        "focus_neighbor_doc_id": "P07",
+        "focus_neighbor_pg_id": 464,
+        "expected_conflict_types": [
+          "deadline_conflict"
+        ],
+        "note": "省申报通知补召深圳通知后应检出截止冲突"
+      }
+    ]
+  },
+  "stats": {
+    "expand": 5,
+    "conflict": 12,
+    "retrieve": 3,
+    "e2e": 2
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "corpus_name": "粤创智造合成政策图谱评测集",
+  "format": "markdown_with_yaml_frontmatter",
+  "format_rationale": "业界RAG常用：正文Markdown便于按标题分块与嵌入；元数据用frontmatter+独立JSON清单保存图边与金标冲突，避免把JSON结构直接嵌入向量。",
+  "count": 20,
+  "nodes": [
+    {
+      "doc_id": "P01",
+      "filename": "01_广东省粤创智造高新技术企业研发费用补贴管理办法_2024.md",
+      "title": "广东省粤创智造高新技术企业研发费用补贴管理办法（2024）",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科规〔2024〕8号",
+      "deadline": null,
+      "funding_amount": "最高补贴300万元",
+      "status": "abolished"
+    },
+    {
+      "doc_id": "P02",
+      "filename": "02_广东省粤创智造高新技术企业研发费用补贴管理办法_2026修订.md",
+      "title": "广东省粤创智造高新技术企业研发费用补贴管理办法（2026修订）",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科规〔2026〕3号",
+      "deadline": null,
+      "funding_amount": "最高补贴500万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P03",
+      "filename": "03_广东省科学技术厅关于废止粤科规2024_8号文件的公告.md",
+      "title": "广东省科学技术厅关于废止粤科规〔2024〕8号文件的公告",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科公告〔2026〕2号",
+      "deadline": null,
+      "funding_amount": null,
+      "status": "active"
+    },
+    {
+      "doc_id": "P04",
+      "filename": "04_深圳市粤创智造高新技术企业研发费用补贴实施细则_2026.md",
+      "title": "深圳市粤创智造高新技术企业研发费用补贴实施细则（2026）",
+      "region": "深圳",
+      "level": "municipal",
+      "doc_no": "深科技创新规〔2026〕5号",
+      "deadline": null,
+      "funding_amount": "最高补贴200万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P05",
+      "filename": "05_广州市粤创智造高新技术企业研发费用补贴实施细则_2026.md",
+      "title": "广州市粤创智造高新技术企业研发费用补贴实施细则（2026）",
+      "region": "广州",
+      "level": "municipal",
+      "doc_no": "穗科规字〔2026〕4号",
+      "deadline": null,
+      "funding_amount": "最高补贴300万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P06",
+      "filename": "06_广东省科学技术厅关于组织申报2026年粤创智造研发费用补贴的通知.md",
+      "title": "广东省科学技术厅关于组织申报2026年粤创智造研发费用补贴的通知",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科函〔2026〕120号",
+      "deadline": "2026-09-30",
+      "funding_amount": "最高补贴500万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P07",
+      "filename": "07_深圳市科技创新局关于组织申报2026年粤创智造研发费用补贴的通知.md",
+      "title": "深圳市科技创新局关于组织申报2026年粤创智造研发费用补贴的通知",
+      "region": "深圳",
+      "level": "municipal",
+      "doc_no": "深科技创新〔2026〕88号",
+      "deadline": "2026-08-15",
+      "funding_amount": "最高补贴200万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P08",
+      "filename": "08_广州市科技创新局关于组织申报2026年粤创智造研发费用补贴的通知.md",
+      "title": "广州市科技创新局关于组织申报2026年粤创智造研发费用补贴的通知",
+      "region": "广州",
+      "level": "municipal",
+      "doc_no": "穗科字〔2026〕66号",
+      "deadline": "2026-09-10",
+      "funding_amount": "最高补贴300万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P09",
+      "filename": "09_广东省2026年粤创智造研发费用补贴拟安排资金公示.md",
+      "title": "广东省2026年粤创智造研发费用补贴拟安排资金公示",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科公示〔2026〕40号",
+      "deadline": null,
+      "funding_amount": null,
+      "status": "active"
+    },
+    {
+      "doc_id": "P10",
+      "filename": "10_关于粤创智造相关政策叠加享受有关事项的补充通知.md",
+      "title": "关于粤创智造相关政策叠加享受有关事项的补充通知",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科函〔2026〕135号",
+      "deadline": null,
+      "funding_amount": null,
+      "status": "active"
+    },
+    {
+      "doc_id": "P11",
+      "filename": "11_广东省科学技术厅关于征集2026年粤创智造科技金融专项的通知.md",
+      "title": "广东省科学技术厅关于征集2026年粤创智造科技金融专项的通知",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科函〔2026〕150号",
+      "deadline": "2026-08-31",
+      "funding_amount": "单笔贴息最高50万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P12",
+      "filename": "12_深圳市关于开展2026年粤创智造科技金融配套贴息的通知.md",
+      "title": "深圳市关于开展2026年粤创智造科技金融配套贴息的通知",
+      "region": "深圳",
+      "level": "municipal",
+      "doc_no": "深科技创新〔2026〕102号",
+      "deadline": "2026-08-20",
+      "funding_amount": "单笔贴息最高30万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P13",
+      "filename": "13_2026年粤创智造研发费用补贴专项资金申报指南.md",
+      "title": "2026年粤创智造研发费用补贴专项资金申报指南",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科指南〔2026〕7号",
+      "deadline": "2026-09-30",
+      "funding_amount": "最高补贴500万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P14",
+      "filename": "14_东莞市粤创智造高新技术企业研发费用补贴实施办法_2026.md",
+      "title": "东莞市粤创智造高新技术企业研发费用补贴实施办法（2026）",
+      "region": "东莞",
+      "level": "municipal",
+      "doc_no": "东科〔2026〕18号",
+      "deadline": null,
+      "funding_amount": "最高补贴450万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P15",
+      "filename": "15_佛山市粤创智造高新技术企业研发费用补贴实施细则_2026.md",
+      "title": "佛山市粤创智造高新技术企业研发费用补贴实施细则（2026）",
+      "region": "佛山",
+      "level": "municipal",
+      "doc_no": "佛科〔2026〕11号",
+      "deadline": null,
+      "funding_amount": "最高补贴180万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P16",
+      "filename": "16_深圳市科技创新局关于废止2024年研发补贴细则的通知.md",
+      "title": "深圳市科技创新局关于废止2024年研发补贴有关文件的通知",
+      "region": "深圳",
+      "level": "municipal",
+      "doc_no": "深科技创新〔2026〕20号",
+      "deadline": null,
+      "funding_amount": null,
+      "status": "active"
+    },
+    {
+      "doc_id": "P17",
+      "filename": "17_关于粤创智造补贴与高新技术企业资格衔接事项的通知.md",
+      "title": "关于粤创智造补贴与高新技术企业资格衔接事项的通知",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科函〔2026〕160号",
+      "deadline": null,
+      "funding_amount": null,
+      "status": "active"
+    },
+    {
+      "doc_id": "P18",
+      "filename": "18_广东省粤创智造管理办法2026修订政策解读.md",
+      "title": "《广东省粤创智造高新技术企业研发费用补贴管理办法（2026修订）》政策解读",
+      "region": "广东",
+      "level": "provincial",
+      "doc_no": "粤科解读〔2026〕3号",
+      "deadline": null,
+      "funding_amount": "最高补贴500万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P19",
+      "filename": "19_珠海市促进高新技术企业研发投入奖励办法_2026.md",
+      "title": "珠海市促进高新技术企业研发投入奖励办法（2026）",
+      "region": "珠海",
+      "level": "municipal",
+      "doc_no": "珠科〔2026〕9号",
+      "deadline": "2026-10-15",
+      "funding_amount": "最高奖励120万元",
+      "status": "active"
+    },
+    {
+      "doc_id": "P20",
+      "filename": "20_中山市高新技术企业研发投入奖励实施办法_2026.md",
+      "title": "中山市高新技术企业研发投入奖励实施办法（2026）",
+      "region": "中山",
+      "level": "municipal",
+      "doc_no": "中科〔2026〕12号",
+      "deadline": "2026-09-01",
+      "funding_amount": "最高奖励80万元",
+      "status": "active"
+    }
+  ],
+  "edges": [
+    {
+      "source": "P02",
+      "target": "P01",
+      "relation_type": "supersedes",
+      "confidence": 0.95,
+      "evidence": "2026修订废止2024办法"
+    },
+    {
+      "source": "P03",
+      "target": "P01",
+      "relation_type": "supersedes",
+      "confidence": 0.95,
+      "evidence": "废止公告明确废止粤科规〔2024〕8号"
+    },
+    {
+      "source": "P02",
+      "target": "P03",
+      "relation_type": "same_program",
+      "confidence": 0.8,
+      "evidence": "废止公告与新办法同日衔接"
+    },
+    {
+      "source": "P04",
+      "target": "P02",
+      "relation_type": "implements",
+      "confidence": 0.9,
+      "evidence": "深圳细则落实省级2026办法"
+    },
+    {
+      "source": "P05",
+      "target": "P02",
+      "relation_type": "implements",
+      "confidence": 0.9,
+      "evidence": "广州细则落实省级2026办法"
+    },
+    {
+      "source": "P14",
+      "target": "P02",
+      "relation_type": "implements",
+      "confidence": 0.9,
+      "evidence": "东莞实施办法落实省级办法"
+    },
+    {
+      "source": "P15",
+      "target": "P02",
+      "relation_type": "implements",
+      "confidence": 0.9,
+      "evidence": "佛山细则落实省级办法"
+    },
+    {
+      "source": "P02",
+      "target": "P04",
+      "relation_type": "region_child",
+      "confidence": 0.7,
+      "evidence": "广东→深圳"
+    },
+    {
+      "source": "P02",
+      "target": "P05",
+      "relation_type": "region_child",
+      "confidence": 0.7,
+      "evidence": "广东→广州"
+    },
+    {
+      "source": "P06",
+      "target": "P02",
+      "relation_type": "funding_of",
+      "confidence": 0.85,
+      "evidence": "年度申报通知从属于管理办法"
+    },
+    {
+      "source": "P13",
+      "target": "P02",
+      "relation_type": "funding_of",
+      "confidence": 0.85,
+      "evidence": "申报指南从属于管理办法"
+    },
+    {
+      "source": "P13",
+      "target": "P06",
+      "relation_type": "same_program",
+      "confidence": 0.8,
+      "evidence": "指南与申报通知同年度"
+    },
+    {
+      "source": "P07",
+      "target": "P06",
+      "relation_type": "implements",
+      "confidence": 0.88,
+      "evidence": "深圳申报通知落实省级申报通知"
+    },
+    {
+      "source": "P08",
+      "target": "P06",
+      "relation_type": "implements",
+      "confidence": 0.88,
+      "evidence": "广州申报通知落实省级申报通知"
+    },
+    {
+      "source": "P07",
+      "target": "P04",
+      "relation_type": "funding_of",
+      "confidence": 0.8,
+      "evidence": "深圳通知依据深圳细则"
+    },
+    {
+      "source": "P09",
+      "target": "P06",
+      "relation_type": "lists_under",
+      "confidence": 0.9,
+      "evidence": "拟安排资金公示从属于年度申报通知"
+    },
+    {
+      "source": "P10",
+      "target": "P06",
+      "relation_type": "amends",
+      "confidence": 0.85,
+      "evidence": "叠加享受补充通知修订申报规则"
+    },
+    {
+      "source": "P10",
+      "target": "P02",
+      "relation_type": "amends",
+      "confidence": 0.8,
+      "evidence": "补充通知修订管理办法适用口径"
+    },
+    {
+      "source": "P11",
+      "target": "P02",
+      "relation_type": "complements",
+      "confidence": 0.8,
+      "evidence": "科技金融专项配套研发补贴"
+    },
+    {
+      "source": "P12",
+      "target": "P11",
+      "relation_type": "implements",
+      "confidence": 0.85,
+      "evidence": "深圳配套贴息落实省级科技金融通知"
+    },
+    {
+      "source": "P12",
+      "target": "P04",
+      "relation_type": "complements",
+      "confidence": 0.75,
+      "evidence": "深圳科技金融与研发补贴细则配套"
+    },
+    {
+      "source": "P16",
+      "target": "P04",
+      "relation_type": "same_program",
+      "confidence": 0.85,
+      "evidence": "废止旧细则以施行新细则"
+    },
+    {
+      "source": "P17",
+      "target": "P02",
+      "relation_type": "complements",
+      "confidence": 0.8,
+      "evidence": "高新资格衔接通知配套管理办法"
+    },
+    {
+      "source": "P18",
+      "target": "P02",
+      "relation_type": "amends",
+      "confidence": 0.9,
+      "evidence": "政策解读说明修订要点"
+    },
+    {
+      "source": "P19",
+      "target": "P02",
+      "relation_type": "complements",
+      "confidence": 0.7,
+      "evidence": "珠海自立奖励与省级补贴衔接"
+    },
+    {
+      "source": "P20",
+      "target": "P19",
+      "relation_type": "same_program",
+      "confidence": 0.75,
+      "evidence": "中山/珠海同属市研发投入奖励政策族"
+    },
+    {
+      "source": "P20",
+      "target": "P02",
+      "relation_type": "complements",
+      "confidence": 0.7,
+      "evidence": "中山自立奖励与省级补贴衔接"
+    }
+  ],
+  "expected_conflicts": [
+    {
+      "pair": [
+        "P01",
+        "P02"
+      ],
+      "conflict_types": [
+        "legal_validity_conflict",
+        "funding_amount_conflict",
+        "eligibility_conflict"
+      ],
+      "note": "旧文已被新文替代；金额300万 vs 500万；门槛300万/1年 vs 500万/2年"
+    },
+    {
+      "pair": [
+        "P01",
+        "P03"
+      ],
+      "conflict_types": [
+        "legal_validity_conflict"
+      ],
+      "note": "废止公告明确废止 P01"
+    },
+    {
+      "pair": [
+        "P02",
+        "P04"
+      ],
+      "conflict_types": [
+        "funding_hierarchy_diff",
+        "eligibility_conflict"
+      ],
+      "note": "省500万 vs 市200万；注册资本500万/2年 vs 200万/1年"
+    },
+    {
+      "pair": [
+        "P02",
+        "P05"
+      ],
+      "conflict_types": [
+        "funding_hierarchy_diff"
+      ],
+      "note": "省500万 vs 广州配套300万"
+    },
+    {
+      "pair": [
+        "P06",
+        "P07"
+      ],
+      "conflict_types": [
+        "deadline_conflict",
+        "funding_hierarchy_diff",
+        "eligibility_conflict"
+      ],
+      "note": "截止9-30 vs 8-15；金额500 vs 200；门槛不一致"
+    },
+    {
+      "pair": [
+        "P06",
+        "P08"
+      ],
+      "conflict_types": [
+        "deadline_conflict",
+        "funding_hierarchy_diff"
+      ],
+      "note": "截止9-30 vs 9-10；金额500 vs 300"
+    },
+    {
+      "pair": [
+        "P04",
+        "P05"
+      ],
+      "conflict_types": [
+        "funding_amount_conflict",
+        "eligibility_conflict"
+      ],
+      "note": "深圳与广州同级细则金额/门槛不同"
+    },
+    {
+      "pair": [
+        "P06",
+        "P10"
+      ],
+      "conflict_types": [
+        "exclusivity_conflict"
+      ],
+      "note": "补充通知含不得重复/就高不就低"
+    },
+    {
+      "pair": [
+        "P11",
+        "P10"
+      ],
+      "conflict_types": [
+        "exclusivity_conflict"
+      ],
+      "note": "科技金融与研发补贴费用口径互斥规则"
+    },
+    {
+      "pair": [
+        "P19",
+        "P20"
+      ],
+      "conflict_types": [
+        "funding_amount_conflict",
+        "deadline_conflict"
+      ],
+      "note": "珠海120万/10-15 vs 中山80万/9-01"
+    },
+    {
+      "pair": [
+        "P02",
+        "P14"
+      ],
+      "conflict_types": [
+        "exclusivity_conflict"
+      ],
+      "note": "省500万 vs 东莞450万未达1.5倍金额阈值，故不以金额层级差为金标；正文含不得重复等互斥表述"
+    },
+    {
+      "pair": [
+        "P07",
+        "P12"
+      ],
+      "conflict_types": [
+        "deadline_conflict",
+        "exclusivity_conflict"
+      ],
+      "note": "两市通知截止不同；贴息含不得重复"
+    }
+  ],
+  "conflict_type_coverage": {
+    "deadline_conflict": [
+      "P06-P07",
+      "P06-P08",
+      "P19-P20",
+      "P07-P12"
+    ],
+    "funding_amount_conflict": [
+      "P01-P02",
+      "P04-P05",
+      "P19-P20"
+    ],
+    "funding_hierarchy_diff": [
+      "P02-P04",
+      "P02-P05",
+      "P02-P14",
+      "P06-P07"
+    ],
+    "eligibility_conflict": [
+      "P01-P02",
+      "P02-P04",
+      "P06-P07"
+    ],
+    "legal_validity_conflict": [
+      "P01-P02",
+      "P01-P03"
+    ],
+    "exclusivity_conflict": [
+      "P06-P10",
+      "P11-P10",
+      "P07-P12"
+    ]
+  },
+  "ingest_note": "本目录仅本地语料，尚未写入 PostgreSQL / 向量库。",
+  "char_counts_approx": {
+    "P01": 1335,
+    "P02": 1430,
+    "P03": 987,
+    "P04": 1271,
+    "P05": 1042,
+    "P06": 1144,
+    "P07": 1108,
+    "P08": 891,
+    "P09": 973,
+    "P10": 1085,
+    "P11": 976,
+    "P12": 867,
+    "P13": 988,
+    "P14": 968,
+    "P15": 848,
+    "P16": 878,
+    "P17": 933,
+    "P18": 916,
+    "P19": 921,
+    "P20": 899
+  }
+}

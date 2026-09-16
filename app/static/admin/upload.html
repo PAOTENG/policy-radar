@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>上传政策 · PolicyRadar</title>
+  <link rel="stylesheet" href="/admin/app.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand-link" href="/admin/">PolicyRadar</a>
+    <span class="topbar-title">政策文件上传与知识图谱</span>
+    <a class="btn btn-ghost" href="/admin/">返回首页</a>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>上传政策文件</h2>
+      <p class="muted">支持 MD / TXT / PDF / DOCX。上传后自动：解析 → 向量 → ES → 知识图谱建边。</p>
+      <div id="uploadZone" class="upload-zone" tabindex="0" role="button">
+        <div class="upload-icon">↑</div>
+        <div id="uploadHint">点击选择文件，或拖拽到此处</div>
+        <div class="upload-sub">单文件不超过 15MB</div>
+      </div>
+      <input id="fileInput" type="file" hidden accept=".md,.txt,.markdown,.csv,.pdf,.docx" />
+      <div id="uploadMsg" class="upload-msg" hidden></div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>最近入库文档</h2>
+        <button id="btnRefresh" class="btn btn-ghost btn-sm" type="button">刷新</button>
+      </div>
+      <label class="check-row">
+        <input id="uploadedOnly" type="checkbox" checked />
+        仅显示管理员上传
+      </label>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>标题</th>
+              <th>地区</th>
+              <th>类目</th>
+              <th>分块</th>
+              <th>关联边</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="docBody">
+            <tr><td colspan="7" class="empty">加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- 成功 / 详情弹窗 -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3 id="modalTitle">上传成功</h3>
+        <button class="modal-x" type="button" data-close aria-label="关闭">×</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+      <div class="modal-foot">
+        <button class="btn btn-primary" type="button" data-close>知道了</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin/app.js"></script>
+</body>
+</html>
