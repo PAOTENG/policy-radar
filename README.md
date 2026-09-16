@@ -1,104 +1,104 @@
-# PolicyRadar · 政策情报 Agent 系统
+# PolicyRadar · Policy Intelligence Agent
 
-> 企业政策信息采集 → AI 打分清洗 → 智能报告生成
+> Policy collection for enterprises → AI scoring and cleaning → intelligent report generation
 
-## 目录结构
+## Project Structure
 
 ```
 policy-radar/
 ├── app/
-│   ├── main.py                # FastAPI 入口（端口 8001）
-│   ├── config.py              # 配置（与 ShillGuard 完全隔离）
+│   ├── main.py                # FastAPI entrypoint (port 8001)
+│   ├── config.py              # Settings (fully isolated from ShillGuard)
 │   ├── db/
-│   │   ├── init.py            # 建表（pgvector 扩展、5 张表）
-│   │   ├── postgres.py        # asyncpg 连接池
-│   │   └── schemas.py         # Pydantic 数据模型
+│   │   ├── init.py            # Schema setup (pgvector extension, 5 tables)
+│   │   ├── postgres.py        # asyncpg connection pool
+│   │   └── schemas.py         # Pydantic data models
 │   ├── agents/
 │   │   └── report/
-│   │       ├── graph.py       # LangGraph 报告 Agent（retrieve→format→stream）
-│   │       └── prompts.py     # 系统提示词
+│   │       ├── graph.py       # LangGraph report agent (retrieve → format → stream)
+│   │       └── prompts.py     # System prompts
 │   ├── crawler/
-│   │   ├── base.py            # 爬虫基类（Playwright + LLM 提取）
-│   │   ├── sources.py         # 具体爬虫（工信部/科技部/财政部）
-│   │   └── scheduler.py       # APScheduler 定时任务（每天 03:00）
+│   │   ├── base.py            # Crawler base class (Playwright + LLM extraction)
+│   │   ├── sources.py         # Site crawlers (MIIT / MOST / MOF)
+│   │   └── scheduler.py       # APScheduler job (daily at 03:00)
 │   ├── rag/
-│   │   ├── es_client.py       # Elasticsearch BM25 检索
-│   │   └── retriever.py       # 混合检索（pgvector + BM25 + RRF）
+│   │   ├── es_client.py       # Elasticsearch BM25 retrieval
+│   │   └── retriever.py       # Hybrid retrieval (pgvector + BM25 + RRF)
 │   └── api/
-│       ├── categories.py      # 分类树接口
-│       ├── policies.py        # 政策列表/详情接口
-│       ├── report.py          # 报告生成（SSE 流式）
-│       └── crawl.py           # 手动触发采集
+│       ├── categories.py      # Category tree API
+│       ├── policies.py        # Policy list / detail API
+│       ├── report.py          # Report generation (SSE streaming)
+│       └── crawl.py           # Manual crawl trigger
 ├── scripts/
-│   └── seed_data.py           # 初始化分类树 + 示例政策数据
+│   └── seed_data.py           # Seed category tree + sample policies
 ├── requirements.txt
 ├── .env.example
 └── README.md
 ```
 
-## 快速启动
+## Quick Start
 
-### 1. 创建 PostgreSQL 数据库
+### 1. Create the PostgreSQL database
 
 ```sql
 CREATE DATABASE policy_radar;
--- 进入 policy_radar 库
+-- Switch to the policy_radar database
 \c policy_radar
 CREATE EXTENSION IF NOT EXISTS vector;
 ```
 
-### 2. 安装依赖
+### 2. Install dependencies
 
 ```
 pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 3. 配置环境变量
+### 3. Configure environment variables
 
 ```
 copy .env.example .env
 ```
 
-编辑 `.env`，填入 LLM API Key、PostgreSQL 密码等。
+Edit `.env` and fill in the LLM API key, PostgreSQL password, and other secrets.
 
-### 4. 初始化数据库 + 种子数据
+### 4. Initialize the database and seed data
 
 ```
 python scripts/seed_data.py
 ```
 
-### 5. 启动服务
+### 5. Start the service
 
 ```
 python -m app.main
 ```
 
-服务运行在 http://localhost:8001，Swagger 文档：http://localhost:8001/docs
+The service listens on http://localhost:8001. Swagger docs: http://localhost:8001/docs
 
-## API 接口
+## API Endpoints
 
-| 方法 | 路径 | 说明 |
+| Method | Path | Description |
 |------|------|------|
-| GET  | /api/v1/categories | 获取完整分类树（4 级） |
-| GET  | /api/v1/policies | 政策列表（支持 region/l1/l2 过滤） |
-| GET  | /api/v1/policies/{id} | 政策详情 |
-| POST | /api/v1/report/generate | 流式生成报告（SSE） |
-| POST | /api/v1/crawl/trigger | 手动触发采集任务 |
-| GET  | /health | 健康检查 |
+| GET  | /api/v1/categories | Full category tree (4 levels) |
+| GET  | /api/v1/policies | Policy list (filter by region / l1 / l2) |
+| GET  | /api/v1/policies/{id} | Policy detail |
+| POST | /api/v1/report/generate | Stream a generated report (SSE) |
+| POST | /api/v1/crawl/trigger | Trigger a crawl job manually |
+| GET  | /health | Health check |
 
-## 与 ShillGuard 的隔离关系
+## Isolation from ShillGuard
 
-| 资源 | ShillGuard | PolicyRadar | 隔离方式 |
+| Resource | ShillGuard | PolicyRadar | Isolation |
 |------|-----------|-------------|---------|
-| 服务端口 | 8000 | 8001 | 不同端口 |
-| PostgreSQL 数据库 | shillguard | policy_radar | 不同 DB |
-| Elasticsearch 索引 | shillguard_kg | policy_radar_* | 不同前缀 |
-| Redis 数据库 | db=0 | db=1 | 不同 DB 编号 |
-| Python 包环境 | agent venv | 可复用 agent venv | 共用 |
+| Service port | 8000 | 8001 | Different ports |
+| PostgreSQL database | shillguard | policy_radar | Different databases |
+| Elasticsearch index | shillguard_kg | policy_radar_* | Different prefixes |
+| Redis database | db=0 | db=1 | Different DB numbers |
+| Python environment | agent venv | can reuse agent venv | Shared |
 
-## 前端访问
+## Frontend Access
 
-在 `shill-guard-frontend` 项目中，admin 侧边栏"政策情报"分组下点击"政策情报 Agent"。
+In the `shill-guard-frontend` project, open the admin sidebar group **Policy Intelligence** and click **Policy Intelligence Agent**.
 
-Vite 代理：`/policy-api/*` → `http://localhost:8001/*`
+Vite proxy: `/policy-api/*` → `http://localhost:8001/*`
